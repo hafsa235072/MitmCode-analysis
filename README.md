@@ -1,42 +1,62 @@
-# mitmproxy
+# Release Checklist
 
-[![Continuous Integration Status](https://github.com/mitmproxy/mitmproxy/workflows/CI/badge.svg?branch=main)](https://github.com/mitmproxy/mitmproxy/actions?query=branch%3Amain)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a38b0325dfb944839c0c8da354f70b1b)](https://app.codacy.com/gh/mitmproxy/mitmproxy/dashboard)
-[![autofix.ci: enabled](https://shields.mitmproxy.org/badge/autofix.ci-yes-success?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCB0cmFuc2Zvcm09InNjYWxlKDAuMDYxLC0wLjA2MSkgdHJhbnNsYXRlKC0yNTAsLTE3NTApIiBkPSJNMTMyNSAtMzQwcS0xMTUgMCAtMTY0LjUgMzIuNXQtNDkuNSAxMTQuNXEwIDMyIDUgNzAuNXQxMC41IDcyLjV0NS41IDU0djIyMHEtMzQgLTkgLTY5LjUgLTE0dC03MS41IC01cS0xMzYgMCAtMjUxLjUgNjJ0LTE5MSAxNjl0LTkyLjUgMjQxcS05MCAxMjAgLTkwIDI2NnEwIDEwOCA0OC41IDIwMC41dDEzMiAxNTUuNXQxODguNSA4MXExNSA5OSAxMDAuNSAxODAuNXQyMTcgMTMwLjV0MjgyLjUgNDlxMTM2IDAgMjU2LjUgLTQ2IHQyMDkgLTEyNy41dDEyOC41IC0xODkuNXExNDkgLTgyIDIyNyAtMjEzLjV0NzggLTI5OS41cTAgLTEzNiAtNTggLTI0NnQtMTY1LjUgLTE4NC41dC0yNTYuNSAtMTAzLjVsLTI0MyAtMzAwdi01MnEwIC0yNyAzLjUgLTU2LjV0Ni41IC01Ny41dDMgLTUycTAgLTg1IC00MS41IC0xMTguNXQtMTU3LjUgLTMzLjV6TTEzMjUgLTI2MHE3NyAwIDk4IDE0LjV0MjEgNTcuNXEwIDI5IC0zIDY4dC02LjUgNzN0LTMuNSA0OHY2NGwyMDcgMjQ5IHEtMzEgMCAtNjAgNS41dC01NCAxMi41bC0xMDQgLTEyM3EtMSAzNCAtMiA2My41dC0xIDU0LjVxMCA2OSA5IDEyM2wzMSAyMDBsLTExNSAtMjhsLTQ2IC0yNzFsLTIwNSAyMjZxLTE5IC0xNSAtNDMgLTI4LjV0LTU1IC0yNi41bDIxOSAtMjQydi0yNzZxMCAtMjAgLTUuNSAtNjB0LTEwLjUgLTc5dC01IC01OHEwIC00MCAzMCAtNTMuNXQxMDQgLTEzLjV6TTEyNjIgNjE2cS0xMTkgMCAtMjI5LjUgMzQuNXQtMTkzLjUgOTYuNWw0OCA2NCBxNzMgLTU1IDE3MC41IC04NXQyMDQuNSAtMzBxMTM3IDAgMjQ5IDQ1LjV0MTc5IDEyMXQ2NyAxNjUuNWg4MHEwIC0xMTQgLTc3LjUgLTIwNy41dC0yMDggLTE0OXQtMjg5LjUgLTU1LjV6TTgwMyA1OTVxODAgMCAxNDkgMjkuNXQxMDggNzIuNWwyMjEgLTY3bDMwOSA4NnE0NyAtMzIgMTA0LjUgLTUwdDExNy41IC0xOHE5MSAwIDE2NSAzOHQxMTguNSAxMDMuNXQ0NC41IDE0Ni41cTAgNzYgLTM0LjUgMTQ5dC05NS41IDEzNHQtMTQzIDk5IHEtMzcgMTA3IC0xMTUuNSAxODMuNXQtMTg2IDExNy41dC0yMzAuNSA0MXEtMTAzIDAgLTE5Ny41IC0yNnQtMTY5IC03Mi41dC0xMTcuNSAtMTA4dC00MyAtMTMxLjVxMCAtMzQgMTQuNSAtNjIuNXQ0MC41IC01MC41bC01NSAtNTlxLTM0IDI5IC01NCA2NS41dC0yNSA4MS41cS04MSAtMTggLTE0NSAtNzB0LTEwMSAtMTI1LjV0LTM3IC0xNTguNXEwIC0xMDIgNDguNSAtMTgwLjV0MTI5LjUgLTEyM3QxNzkgLTQ0LjV6Ii8+PC9zdmc+)](https://autofix.ci)
-[![Coverage Status](https://shields.mitmproxy.org/codecov/c/github/mitmproxy/mitmproxy/main.svg?label=codecov)](https://codecov.io/gh/mitmproxy/mitmproxy)
-[![Latest Version](https://shields.mitmproxy.org/pypi/v/mitmproxy.svg)](https://pypi.python.org/pypi/mitmproxy)
-[![Supported Python versions](https://shields.mitmproxy.org/pypi/pyversions/mitmproxy.svg)](https://pypi.python.org/pypi/mitmproxy)
+1. Check if `mitmproxy-rs` needs a new release.
+2. Make sure that `CHANGELOG.md` is up-to-date with all entries in the "Unreleased" section.
+3. Invoke the [release workflow](https://github.com/mitmproxy/mitmproxy/actions/workflows/release.yml) from the GitHub UI.
+4. The spawned workflow runs will require manual confirmation on GitHub which you need to approve twice: 
+   https://github.com/mitmproxy/mitmproxy/actions
+5. Once everything has been deployed, update the website.
+6. Verify that the front-page download links for all platforms are working.
 
-``mitmproxy`` is an interactive, SSL/TLS-capable intercepting proxy with a console
-interface for HTTP/1, HTTP/2, and WebSockets.
+### GitHub Releases
 
-``mitmdump`` is the command-line version of mitmproxy. Think tcpdump for HTTP.
+- CI will automatically create a GitHub release:  
+  https://github.com/mitmproxy/mitmproxy/releases
 
-``mitmweb`` is a web-based interface for mitmproxy.
+### PyPi
 
-## Installation
+- CI will automatically push a wheel to GitHub:  
+  https://pypi.python.org/pypi/mitmproxy
 
-The installation instructions are [here](https://docs.mitmproxy.org/stable/overview-installation).
-If you want to install from source, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+### Docker
 
-## Documentation & Help
+- CI will automatically push images to Docker Hub:  
+  https://hub.docker.com/r/mitmproxy/mitmproxy/tags/
 
-General information, tutorials, and precompiled binaries can be found on the mitmproxy website.
+### Docs
 
-[![mitmproxy.org](https://shields.mitmproxy.org/badge/https%3A%2F%2F-mitmproxy.org-blue.svg)](https://mitmproxy.org/)
+- CI will automatically update the stable docs and create an archive version:  
+  `https://docs.mitmproxy.org/archive/vMAJOR/`
 
-The documentation for mitmproxy is available on our website:
+### Download Server
 
-[![mitmproxy documentation stable](https://shields.mitmproxy.org/badge/docs-stable-brightgreen.svg)](https://docs.mitmproxy.org/stable/)
-[![mitmproxy documentation dev](https://shields.mitmproxy.org/badge/docs-dev-brightgreen.svg)](https://docs.mitmproxy.org/dev/)
+- CI will automatically push binaries to our download S3 bucket:  
+  https://mitmproxy.org/downloads/
 
-If you have questions on how to use mitmproxy, please
-use GitHub Discussions!
+### Microsoft Store
 
-[![mitmproxy discussions](https://shields.mitmproxy.org/badge/help-github%20discussions-orange.svg)](https://github.com/mitmproxy/mitmproxy/discussions)
+- CI will automatically update the Microsoft Store version:  
+  https://apps.microsoft.com/store/detail/mitmproxy/9NWNDLQMNZD7
+- There is a review process, binaries may take a day to show up.
 
-## Contributing
+### Homebrew
 
-As an open source project, mitmproxy welcomes contributions of all forms.
+- The Homebrew maintainers are typically very fast and detect our new relese
+  within a day.
+- If you feel the need, you can run this from a macOS machine:
+  `brew bump-cask-pr mitmproxy`
 
-[![Dev Guide](https://shields.mitmproxy.org/badge/dev_docs-CONTRIBUTING.md-blue)](./CONTRIBUTING.md)
+### Website
+
+- The website does not need to be updated for patch releases. New versions are automatically picked up once they are on the download server.
+- Update version here:
+   https://github.com/mitmproxy/www/blob/main/src/config.toml
+- Update docs menu here:
+   https://github.com/mitmproxy/www/blob/main/src/themes/mitmproxy/layouts/partials/header.html
+- Run `./build && ./upload-test`.
+- If everything looks alright at https://www-test.mitmproxy.org, run `./upload-prod`.
+
+### Prepare for next release
+
+- Last but not least, bump the major version on main in
+   [https://github.com/mitmproxy/mitmproxy/blob/main/mitmproxy/version.py](mitmproxy/version.py) and add a `.dev` suffix.
